@@ -7,7 +7,7 @@ function Data.new(name, data)
 		makefolder(name)
 	end
 
-    local savedData = isfile(name.."/settings.json") and Http:JSONDecode(readfile(name.."/Settings.json"))
+    local savedData = isfile(name.."/Settings.json") and Http:JSONDecode(readfile(name.."/Settings.json"))
     
     if savedData then
         for i,v in pairs(data) do
