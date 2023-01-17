@@ -5,11 +5,11 @@ local DataFunctions = {}
 local Http = game:GetService("HttpService")
 
 function Data.new(data)
-	if not isfolder("kazhub/"..game.PlaceId.."-"..get.MarketplaceService:GetProductInfo(game.PlaceId).Name) then
-		makefolder("kazhub/"..game.PlaceId.."-"..get.MarketplaceService:GetProductInfo(game.PlaceId).Name)
+	if not isfolder("kazhub/"..game.PlaceId) then
+		makefolder("kazhub/"..game.PlaceId)
 	end
 
-    local savedData = isfile("kazhub/"..game.PlaceId.."-"..get.MarketplaceService:GetProductInfo(game.PlaceId).Name.."/Settings.json") and Http:JSONDecode(readfile("kazhub/"..game.PlaceId.."-"..get.MarketplaceService:GetProductInfo(game.PlaceId).Name.."/Settings.json"))
+    local savedData = isfile("kazhub/"..game.PlaceId.."/Settings.json") and Http:JSONDecode(readfile("kazhub/"..game.PlaceId.."/Settings.json"))
     
     if savedData then
         for i,v in pairs(data) do
@@ -21,7 +21,7 @@ function Data.new(data)
 
 	return setmetatable({
 		Data = savedData or data,
-		FolderName = "kazhub/"..game.PlaceId.."-"..get.MarketplaceService:GetProductInfo(game.PlaceId).Name
+		FolderName = "kazhub/"..game.PlaceId
 	}, {
 		__index = DataFunctions
 	})
