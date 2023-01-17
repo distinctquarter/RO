@@ -6,6 +6,7 @@ local Http = game:GetService("HttpService")
 
 function Data.new(data)
 	if not isfolder("kazhub/"..game.PlaceId) then
+		makefolder("kazhub")
 		makefolder("kazhub/"..game.PlaceId)
 	end
 
