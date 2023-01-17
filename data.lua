@@ -1,3 +1,4 @@
+local get = setmetatable({}, {__index = function(a, b) return game:GetService(b) or game[b] end})
 
 local Data = {}
 local DataFunctions = {}
