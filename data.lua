@@ -9,7 +9,7 @@ function Data.new(data)
 		makefolder("kazhub/"..game.PlaceId.."-"..get.MarketplaceService:GetProductInfo(game.PlaceId).Name)
 	end
 
-    local savedData = isfile("kazhub/"..game.PlaceId.."-"..get.MarketplaceService:GetProductInfo(game.PlaceId).Name.."/settings.json") and Http:JSONDecode(readfile("kazhub/"..game.PlaceId.."-"..get.MarketplaceService:GetProductInfo(game.PlaceId).Name.."/Settings.json"))
+    local savedData = isfile("kazhub/"..game.PlaceId.."-"..get.MarketplaceService:GetProductInfo(game.PlaceId).Name.."/Settings.json") and Http:JSONDecode(readfile("kazhub/"..game.PlaceId.."-"..get.MarketplaceService:GetProductInfo(game.PlaceId).Name.."/Settings.json"))
     
     if savedData then
         for i,v in pairs(data) do
